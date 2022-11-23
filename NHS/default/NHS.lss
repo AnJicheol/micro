@@ -1,0 +1,203 @@
+
+NHS.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000122  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .stab         000006cc  00000000  00000000  00000178  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  2 .stabstr      00000085  00000000  00000000  00000844  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  3 .debug_aranges 00000020  00000000  00000000  000008c9  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_pubnames 0000001b  00000000  00000000  000008e9  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   000000b4  00000000  00000000  00000904  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 00000073  00000000  00000000  000009b8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000124  00000000  00000000  00000a2b  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000020  00000000  00000000  00000b50  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00000079  00000000  00000000  00000b70  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    000000a1  00000000  00000000  00000be9  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_pubtypes 0000001e  00000000  00000000  00000c8a  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 46 00 	jmp	0x8c	; 0x8c <__ctors_end>
+   4:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+   8:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+   c:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  10:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  14:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  18:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  1c:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  20:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  24:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  28:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  2c:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  30:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  34:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  38:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  3c:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  40:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  44:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  48:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  4c:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  50:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  54:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  58:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  5c:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  60:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  64:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  68:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  6c:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  70:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  74:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  78:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  7c:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  80:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  84:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  88:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+
+0000008c <__ctors_end>:
+  8c:	11 24       	eor	r1, r1
+  8e:	1f be       	out	0x3f, r1	; 63
+  90:	cf ef       	ldi	r28, 0xFF	; 255
+  92:	d0 e1       	ldi	r29, 0x10	; 16
+  94:	de bf       	out	0x3e, r29	; 62
+  96:	cd bf       	out	0x3d, r28	; 61
+  98:	0e 94 52 00 	call	0xa4	; 0xa4 <main>
+  9c:	0c 94 8f 00 	jmp	0x11e	; 0x11e <_exit>
+
+000000a0 <__bad_interrupt>:
+  a0:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000a4 <main>:
+#include <avr/io.h>
+
+int main(){
+  a4:	df 93       	push	r29
+  a6:	cf 93       	push	r28
+  a8:	cd b7       	in	r28, 0x3d	; 61
+  aa:	de b7       	in	r29, 0x3e	; 62
+  ac:	28 97       	sbiw	r28, 0x08	; 8
+  ae:	0f b6       	in	r0, 0x3f	; 63
+  b0:	f8 94       	cli
+  b2:	de bf       	out	0x3e, r29	; 62
+  b4:	0f be       	out	0x3f, r0	; 63
+  b6:	cd bf       	out	0x3d, r28	; 61
+	
+	volatile unsigned long int i, j;
+	unsigned char PortInitValue = 0x01;
+
+	DDRA = 0xFF;
+  b8:	8f ef       	ldi	r24, 0xFF	; 255
+  ba:	8a bb       	out	0x1a, r24	; 26
+	PORTA = PortInitValue;
+  bc:	81 e0       	ldi	r24, 0x01	; 1
+  be:	8b bb       	out	0x1b, r24	; 27
+#include <avr/io.h>
+
+int main(){
+	
+	volatile unsigned long int i, j;
+	unsigned char PortInitValue = 0x01;
+  c0:	21 e0       	ldi	r18, 0x01	; 1
+	DDRA = 0xFF;
+	PORTA = PortInitValue;
+
+	do{
+
+		for(i = 0; i <= 200000; ++i){
+  c2:	19 82       	std	Y+1, r1	; 0x01
+  c4:	1a 82       	std	Y+2, r1	; 0x02
+  c6:	1b 82       	std	Y+3, r1	; 0x03
+  c8:	1c 82       	std	Y+4, r1	; 0x04
+  ca:	16 c0       	rjmp	.+44     	; 0xf8 <main+0x54>
+			++j;
+  cc:	8d 81       	ldd	r24, Y+5	; 0x05
+  ce:	9e 81       	ldd	r25, Y+6	; 0x06
+  d0:	af 81       	ldd	r26, Y+7	; 0x07
+  d2:	b8 85       	ldd	r27, Y+8	; 0x08
+  d4:	01 96       	adiw	r24, 0x01	; 1
+  d6:	a1 1d       	adc	r26, r1
+  d8:	b1 1d       	adc	r27, r1
+  da:	8d 83       	std	Y+5, r24	; 0x05
+  dc:	9e 83       	std	Y+6, r25	; 0x06
+  de:	af 83       	std	Y+7, r26	; 0x07
+  e0:	b8 87       	std	Y+8, r27	; 0x08
+	DDRA = 0xFF;
+	PORTA = PortInitValue;
+
+	do{
+
+		for(i = 0; i <= 200000; ++i){
+  e2:	89 81       	ldd	r24, Y+1	; 0x01
+  e4:	9a 81       	ldd	r25, Y+2	; 0x02
+  e6:	ab 81       	ldd	r26, Y+3	; 0x03
+  e8:	bc 81       	ldd	r27, Y+4	; 0x04
+  ea:	01 96       	adiw	r24, 0x01	; 1
+  ec:	a1 1d       	adc	r26, r1
+  ee:	b1 1d       	adc	r27, r1
+  f0:	89 83       	std	Y+1, r24	; 0x01
+  f2:	9a 83       	std	Y+2, r25	; 0x02
+  f4:	ab 83       	std	Y+3, r26	; 0x03
+  f6:	bc 83       	std	Y+4, r27	; 0x04
+  f8:	89 81       	ldd	r24, Y+1	; 0x01
+  fa:	9a 81       	ldd	r25, Y+2	; 0x02
+  fc:	ab 81       	ldd	r26, Y+3	; 0x03
+  fe:	bc 81       	ldd	r27, Y+4	; 0x04
+ 100:	81 34       	cpi	r24, 0x41	; 65
+ 102:	3d e0       	ldi	r19, 0x0D	; 13
+ 104:	93 07       	cpc	r25, r19
+ 106:	33 e0       	ldi	r19, 0x03	; 3
+ 108:	a3 07       	cpc	r26, r19
+ 10a:	30 e0       	ldi	r19, 0x00	; 0
+ 10c:	b3 07       	cpc	r27, r19
+ 10e:	f0 f2       	brcs	.-68     	; 0xcc <main+0x28>
+			++j;
+		}
+			
+		
+		if((PortInitValue & 0x80) == 0x80){
+ 110:	27 fd       	sbrc	r18, 7
+ 112:	02 c0       	rjmp	.+4      	; 0x118 <main+0x74>
+
+			PortInitValue = 0x01;
+		}
+		
+		else{
+			PortInitValue = PortInitValue << 1;
+ 114:	22 0f       	add	r18, r18
+ 116:	01 c0       	rjmp	.+2      	; 0x11a <main+0x76>
+		}
+			
+		
+		if((PortInitValue & 0x80) == 0x80){
+
+			PortInitValue = 0x01;
+ 118:	21 e0       	ldi	r18, 0x01	; 1
+		else{
+			PortInitValue = PortInitValue << 1;
+		}
+
+				
+		PORTA = PortInitValue;
+ 11a:	2b bb       	out	0x1b, r18	; 27
+	}
+	while(1);
+ 11c:	d2 cf       	rjmp	.-92     	; 0xc2 <main+0x1e>
+
+0000011e <_exit>:
+ 11e:	f8 94       	cli
+
+00000120 <__stop_program>:
+ 120:	ff cf       	rjmp	.-2      	; 0x120 <__stop_program>
